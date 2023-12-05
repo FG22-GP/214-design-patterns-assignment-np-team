@@ -27,9 +27,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\ext\SDL2-2.26.4\lib\x64\ExampleClass.cpp" />
     <ClCompile Include="game.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\ext\SDL2-2.26.4\lib\x64\ExampleClass.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>
