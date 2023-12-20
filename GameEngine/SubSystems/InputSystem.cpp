@@ -23,6 +23,8 @@ void InputSystem::EarlyUpdate()
     inputData.back = false;
     
     // loop through all pending events from Windows (OS)
+
+    //TODO: Divide this poll queue into two, one for OS non state machine dependent input, such as quit and resize, and one for in game state dependent input, like clicking on a menu or movement
     while (SDL_PollEvent(&e))
     {
         const int sdl_keycode = e.key.keysym.sym;
@@ -67,6 +69,7 @@ void InputSystem::EarlyUpdate()
                 inputData.mouseY = e.motion.y;
             } break;
         case SDL_MOUSEBUTTONDOWN: {
+                
                 inputData.action = e.button.button & SDL_BUTTON_LMASK;
             } break;
         }

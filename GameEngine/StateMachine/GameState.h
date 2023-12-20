@@ -3,6 +3,7 @@
 
 #include "../SubSystems/InputSystem.h"
 #include "../SubSystems/VisualElementSubSystem.h"
+#include "../SubSystems/UISystem/UISystem.h"
 
 class GameState
 {
@@ -23,13 +24,14 @@ public:
     virtual bool Enter();
 
     InputSystem* inputSystem;
+    UISystem* UISubSystem;
     VisualElementSubSystem* visualElementSubSystem;
     bool shouldPrepareToExit = false;
-private:
+   
 
-    VisualElement* mPlayerPokemon;
+private:
     VisualElement* mEnemyPokemon;
-    
+    VisualElement* mPlayerPokemon;
      PlayerTurnState* mPlayerGameState;
      EnemyTurnState* mEnemyGameState;
     

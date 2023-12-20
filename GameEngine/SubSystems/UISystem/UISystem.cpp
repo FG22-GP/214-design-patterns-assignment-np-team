@@ -6,7 +6,11 @@
 #include "../SubsystemCollection.h"
 #include "../../Global.h"
 
-UISystem::UISystem() = default;
+UISystem::UISystem()
+{
+    printf("Creating uisystem");
+    mVisualElementSubSystem = SUBSYSTEM_COLLECTION->GetSubSystem<VisualElementSubSystem>();
+}
 
 UISystem::~UISystem() = default;
 
@@ -15,7 +19,7 @@ void UISystem::LateUpdate()
     const InputData input_data = SUBSYSTEM_COLLECTION->gInputSystem->inputData;
 
     const SDL_Point mouse_pointer = SDL_Point{input_data.mouseX, input_data.mouseY};
-
+/*
     if (currentActiveGroup != nullptr)
     {
         for (UIInteractable* const interactable : currentActiveGroup->interactableElements)
@@ -23,6 +27,7 @@ void UISystem::LateUpdate()
             interactable->CheckInteracted(mouse_pointer, input_data.action);
         }
     }
+    */
 }
 
 void UISystem::SwitchMenu(const char* menuName)
@@ -41,3 +46,17 @@ void UISystem::Free()
     currentActiveGroup = nullptr;
     uiGroups.clear();
 }
+
+void UISystem::SetActiveGroup(UIGroupType type)
+{
+    switch (type)
+    {
+    case UIGroupType::battle:
+       
+        break;
+
+    case UIGroupType::overworld: break;
+    }
+}
+
+

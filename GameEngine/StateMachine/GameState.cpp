@@ -9,23 +9,24 @@ GameState::GameState()
 {
     inputSystem = SUBSYSTEM_COLLECTION->GetSubSystem<InputSystem>();
     visualElementSubSystem = SUBSYSTEM_COLLECTION->GetSubSystem<VisualElementSubSystem>();
+    UISubSystem = SUBSYSTEM_COLLECTION->GetSubSystem<UISystem>();
 
 }
 
 void GameState::Begin()
 {
-    VisualElementSubSystem* sub_system = SUBSYSTEM_COLLECTION->GetSubSystem<VisualElementSubSystem>();
     //Move this later,
+    UISubSystem->SetActiveGroup(UIGroupType::battle);
     RectTransform player_sprite_rect{};
     
-    mPlayerPokemon = sub_system->CreateVisualElement("Resources/PokemonSprites/BackSprites.png",player_sprite_rect,0,25,16);
+    mPlayerPokemon = visualElementSubSystem->CreateVisualElement("Resources/PokemonSprites/BackSprites.png",player_sprite_rect,0,25,16);
     mPlayerPokemon->GetTransform()->originAnchorPoint = center;
     mPlayerPokemon->GetTransform()->position.y = (INTERNAL_SCREEN_HEIGHT/2) + 16;
     mPlayerPokemon->GetTransform()->position.x = 60;
 
     //printf("Position of pokemon sprite y: %d",PlayerPokemon->rectTransform.Position.y);
      RectTransform enemy_sprite_rect{};
-     mEnemyPokemon = sub_system->CreateVisualElement("Resources/PokemonSprites/Palmortis.png",enemy_sprite_rect,1,3,1);
+     mEnemyPokemon = visualElementSubSystem->CreateVisualElement("Resources/PokemonSprites/frontsprites.png",enemy_sprite_rect,7,25,16);
      mEnemyPokemon->GetTransform()->originAnchorPoint = center;
      mEnemyPokemon->GetTransform()->position.y = INTERNAL_SCREEN_HEIGHT/4;
      mEnemyPokemon->GetTransform()->position.x = (INTERNAL_SCREEN_WIDTH/2) + 52;
@@ -44,11 +45,13 @@ GameState* GameState::Finish(GameState* currentState)
 
 void GameState::ProcessInput()
 {
+    InputData InputData = inputSystem->inputData;
 }
 
 
 PlayerTurnState* GameState::GetPlayerState()
 {
+
     return mPlayerGameState;
 }
 
