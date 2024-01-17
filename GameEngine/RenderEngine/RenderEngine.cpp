@@ -191,7 +191,9 @@ void RenderEngine::RenderSprites()
 {
     for (auto quad : mElementsToRender)
     {
-        GPU_BlitRect(quad.image,quad.srcRect,backScreen,quad.dstRect);
+        GPU_FlipEnum flip = (quad.flipX && quad.flipY)? GPU_FLIP_HORIZONTAL | GPU_FLIP_VERTICAL: (quad.flipX)? GPU_FLIP_HORIZONTAL: (quad.flipY)? GPU_FLIP_VERTICAL: GPU_FLIP_NONE;
+         GPU_BlitRectX(quad.image,quad.srcRect,backScreen,quad.dstRect,0,0,0,flip);
+        //GPU_BlitRect(quad.image,quad.srcRect,backScreen,quad.dstRect);
     }
 }
 

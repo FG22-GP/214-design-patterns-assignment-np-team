@@ -27,6 +27,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animations\AnimationClip.cpp" />
+    <ClCompile Include="Animations\AnimationLoader.cpp" />
+    <ClCompile Include="Animations\Animator.cpp" />
+    <ClCompile Include="Animations\KeyFrame.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="PokemonData\CombatHelpers.cpp">
       <AssemblerOutput>NoListing</AssemblerOutput>
@@ -279,6 +283,10 @@
     <ClCompile Include="SubSystems\VisualElementSubSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animations\AnimationClip.h" />
+    <ClInclude Include="Animations\AnimationLoader.h" />
+    <ClInclude Include="Animations\Animator.h" />
+    <ClInclude Include="Animations\KeyFrame.h" />
     <ClInclude Include="ExampleClass.h" />
     <ClInclude Include="Global.h" />
     <ClInclude Include="PokemonData\CombatHelpers.h" />
@@ -352,6 +360,26 @@
     <Content Include="Resources\Shaders\Sprite9Slice.vert">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Sprites\Backgrounds\Backgrounds.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero 2\Martial Hero 2\License.txt" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero 2\Martial Hero 2\Sprites\Attack1.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero 2\Martial Hero 2\Sprites\Attack2.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero 2\Martial Hero 2\Sprites\Death.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero 2\Martial Hero 2\Sprites\Fall.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero 2\Martial Hero 2\Sprites\Idle.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero 2\Martial Hero 2\Sprites\Jump.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero 2\Martial Hero 2\Sprites\Run.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero 2\Martial Hero 2\Sprites\Take hit.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero\Martial Hero\License.txt" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero\Martial Hero\Sprites\Attack1.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero\Martial Hero\Sprites\Attack2.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero\Martial Hero\Sprites\Death.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero\Martial Hero\Sprites\Fall.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero\Martial Hero\Sprites\Idle.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero\Martial Hero\Sprites\Jump.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero\Martial Hero\Sprites\Run.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero\Martial Hero\Sprites\Take Hit - white silhouette.png" />
+    <Content Include="Resources\Sprites\Characters\Martial Hero\Martial Hero\Sprites\Take Hit.png" />
     <Content Include="Resources\UISprites\Btn_Attack.png" />
     <Content Include="Resources\UISprites\Btn_Swap.png" />
     <Content Include="Resources\UISprites\MenuBack.png" />
@@ -362,6 +390,9 @@
     <Content Include="Resources\PokemonSprites\Palmortis.png" />
     <Content Include="Resources\PokemonSprites\Slumbra.png" />
     <Content Include="Resources\PokemonSprites\Stellynx.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Animations\AnimationClipsXML\" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

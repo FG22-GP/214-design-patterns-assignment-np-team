@@ -139,7 +139,9 @@ ImageQuad VisualElement::GetImageQuad()
     {
         mTexture->GetImage(),
         GetSrcRect(),
-        GetRenderRect()
+        GetRenderRect(),
+        flipX,
+        flipY
     };
     return imageQuad;
 }

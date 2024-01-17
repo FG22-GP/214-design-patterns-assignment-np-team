@@ -57,4 +57,7 @@ public:
     DrawModeData drawModeData;
 
     RectTransform* GetTransform();
+
+    bool flipX = false;
+    bool flipY = false;
 };
